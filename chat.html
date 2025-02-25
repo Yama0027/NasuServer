@@ -162,7 +162,7 @@ d3.csv("https://docs.google.com/spreadsheets/d/1Bb6GVNV0x3zuiyUSCXT8v0sDQGRVDlhU
 		var id = replaceText(data[i].Id);
 		var timestamp = replaceText(data[i].Timestamp);
 		var comments = replaceText(data[i].Comments);
-		text += i+1 + " 名前: <a href="#": + id + "\">" + name + "</a> " + timestamp + "<pre>" + comments + "</pre>";
+		text += i+1 + " 名前: <a href=\"#:" + id + "\">" + name + "</a> " + timestamp + "<pre>" + comments + "</pre>";
 	}
 	d3.select("#comments").html(text);
 });
