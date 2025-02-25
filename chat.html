@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>,みんなのチャット欄！</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #d2f7fc;
+        }
+
+        header {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            background-color: #33d1e6;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #2fb3c5;
+            font-size: 1.4em;
+            border-bottom: 2px solid #2fb3c5;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .note {
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .no-item {
+            background: #fffcf4;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px silver;
+            padding: 0.5em 0.5em 0.5em 2em;
+        }
+
+        .contact {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            list-style: none; 
+        }
+        nav {
+            background-color: #2fb3c5;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            display: inline-block;
+            position: relative;
+        }
+        nav a:hover {
+            background-color: #298c99;
+        }
+        nav a i {
+            margin-right: 8px;
+        }
+    </style>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+
+</head>
+
+<body>
+    <nav>
+        <a href="index.html"><i class="fas fa-home"></i>ナス鯖!ホーム</a>
+        <a href="participation.html"><i class="fa-solid fa-door-open"></i>参加方法</a>
+        <a href="rule.html"><i class="fas fa-gavel"></i>ルール</a>
+        <a href="report.html"><i class="fa-solid fa-phone"></i>通報</a>
+    </nav>
+
+
+    <header>
+        <h1>みんなのチャット欄！</h1>
+        <p>チャットができます。</p>
+    </header>
+    
+
+    <section>
+        <form action="https://docs.google.com/forms/d/e/【1FAIpQLSeBqTJoz5dC9D6x0NT4B8BiYNRNYLtCxEdvTulZ-FCeg-Gbog】/formResponse" target="hidden_iframe" method="post" onsubmit="return test(this.wcheck.value)">
+            <p><input name="entry.1480257847" placeholder="名前" value="名無し" required></p>
+            <p><input name="entry.537107928" placeholder="ID" type="Id"></p>
+            <p><textarea name="entry.437920764" placeholder="コメント" rows="10" cols="40" maxlength="400" id="wcheck" required></textarea></p>
+            <input type="submit" id="submitbutton" value="送信">
+            </form>
+            <iframe onload='if(submitted){window.location="";}' id=hidden_iframe name=hidden_iframe style=display:none></iframe>
+            
+            <script type="text/javascript">
+            var NGComments = ["死ね","バカ",".exe"]; // 簡易的なNGワードの設定
+            var regex = new RegExp(NGComments.join("|"));
+            function test(wcheck) {
+                if (wcheck.match(regex) != null) {
+                    alert("ERROR: コメントにNGワードが含まれています");
+                    return false;
+                }
+                document.getElementById("submitbutton").disabled = true;
+                textareas = document.getElementsByTagName('textarea');
+                inputs = document.getElementsByTagName('input');
+                return submitted=!0;
+            }
+            </script>
+    </section>
+
+</body>
+
+</html>
